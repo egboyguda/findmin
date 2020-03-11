@@ -13,7 +13,18 @@ public class Main {
         int length = input.nextInt();
         int [] array = readIntegers(length);
         displayArr(array);
+        System.out.println("the lowest element on the array "+findMin(array));
 
+    }
+    public static int findMin(int[] array){
+        int j= array[0];
+        for(int i=0; i<array.length;i++){
+            System.out.println(array[i]);
+            if(array[i]<j){
+                j=+array[i];
+            }
+        }
+        return j;
     }
     public static int[] readIntegers(int length){
         Scanner input = new Scanner(System.in);
