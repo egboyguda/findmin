@@ -13,18 +13,19 @@ public class Main {
         int length = input.nextInt();
         int [] array = readIntegers(length);
         displayArr(array);
-        System.out.println("the lowest element on the array "+findMin(array));
-
+        reverseArr(array);
+        findMin(array);
     }
-    public static int findMin(int[] array){
+
+
+    public static void findMin(int[] array){
         int j= array[0];
         for(int i=0; i<array.length;i++){
-            System.out.println(array[i]);
             if(array[i]<j){
                 j=+array[i];
             }
         }
-        return j;
+        System.out.println("the minimum value of element in array is "+j);
     }
     public static int[] readIntegers(int length){
         Scanner input = new Scanner(System.in);
@@ -37,5 +38,16 @@ public class Main {
     }
     public static void displayArr(int[] array){
         System.out.println(Arrays.toString(array));
+    }
+    public static void reverseArr(int[] array){
+            int length = array.length;
+            int [] arr = new int[length];
+            int count = 0;
+            for (int i= length-1;i>=0;i--){
+                arr[count] = array[i];
+                count++;
+            }
+        System.out.println("reverse array "+Arrays.toString(arr));
+
     }
 }
